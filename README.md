@@ -1,5 +1,7 @@
 # 07 Smoke Trace
 
+**▶ Play it:** https://hanji-xu.github.io/smoke-trace/
+
 **Observation:** a smoke trail is a data visualization of air movement, aggregated over time. Smoke from a fixed source is a *streakline*: the record of every air parcel that has passed through the source.
 
 **What it does:** a real-time 2D fluid simulation on the GPU (WebGL2) in SI units at 1:1 real time. The air is simulated; smoke, heat, and lines are ways of looking at it.
