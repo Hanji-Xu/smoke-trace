@@ -90,6 +90,9 @@ a{color:inherit}
   #physics{padding:24px 18px 60px}
 }
 </style>
+<!-- GoatCounter: privacy-friendly visitor count, no cookies -->
+<script data-goatcounter="https://hanjixu.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -935,7 +938,12 @@ glc.addEventListener('pointerleave', () => { mouse = null; });
 const CHECK = { candle: [[0.20, 0.94], [0.30, 0.99], [0.45, 0.58]], incense: [0.16, 0.19], room: [0.03, 0.04] };
 const MTT = z => 4.7*Math.cbrt(CONST.g*60/(1.204*1005*CONST.T0))*Math.pow(z, -1/3);   // 60 W convective ★, z from the wick
 const WICK = 0.093;
+// count the second view as its own path in GoatCounter (skipped if blocked or not loaded yet)
+function countView(slug, title) {
+  try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: location.pathname.replace(/index\.html$/, '').replace(/\/?$/, '/') + slug, title: title }); } catch (e) {}
+}
 function showPage(name) {
+  if (name === 'physics') countView('how-it-works', 'How it works');
   $('piece').hidden = name !== 'piece';
   $('physics').hidden = name !== 'physics';
   window.scrollTo(0, 0);
